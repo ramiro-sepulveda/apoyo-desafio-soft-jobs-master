@@ -19,7 +19,7 @@ app.get("/usuarios", async (req, res) => {
   try {
     const Authorization = req.header("Authorization");
     const result = await infoUsuario(Authorization);
-    res.json(result.rows[0]);
+    res.json(result.rows);
   }
   catch (error) {
     return res.status(403).json({ error: "Token inválido" });
